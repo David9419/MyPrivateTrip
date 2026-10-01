@@ -27,8 +27,6 @@ function formatEcran(): FormatVideo {
 export function VideoDefilement() {
   const sectionRef = useRef<HTMLElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const voileClairRef = useRef<HTMLDivElement>(null);
-  const voileSombreRef = useRef<HTMLDivElement>(null);
   const barreRef = useRef<HTMLDivElement>(null);
   const descendreRef = useRef<HTMLDivElement>(null);
   const etapesRef = useRef<(HTMLDivElement | null)[]>([]);
@@ -130,13 +128,9 @@ export function VideoDefilement() {
           derniereImage = img;
         }
 
-        // Au début, la vidéo montre des plans blancs : voile clair + logo en couleur.
-        // Ensuite, voile sombre pour que le texte blanc se lise bien.
-        const sombre = transition(0.14, 0.24, p);
-        voileClairRef.current!.style.opacity = String(0.55 * (1 - sombre));
-        voileSombreRef.current!.style.opacity = String(sombre);
+        // Sur la vidéo, l'en-tête passe en version claire ; après la vidéo, en couleur.
         const horsVideo = rect.bottom < 90;
-        document.documentElement.style.setProperty("--sombre", horsVideo ? "0" : String(sombre));
+        document.documentElement.style.setProperty("--sombre", horsVideo ? "0" : "1");
 
         // Léger zoom arrière pendant la descente : effet de profondeur.
         canvas.style.transform = `scale(${1.08 - 0.08 * p})`;
@@ -175,7 +169,7 @@ export function VideoDefilement() {
 
   return (
     <section ref={sectionRef} className="relative h-[650svh]" aria-label={site.nom}>
-      <div className="sticky top-0 h-svh w-full overflow-hidden bg-ivoire">
+      <div className="sticky top-0 h-svh w-full overflow-hidden bg-nuit">
         {/* Première image affichée tout de suite, avant que le reste charge */}
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
@@ -186,10 +180,9 @@ export function VideoDefilement() {
         />
         <canvas ref={canvasRef} className="absolute inset-0 h-full w-full origin-center will-change-transform" />
 
-        <div ref={voileClairRef} className="absolute inset-0 bg-ivoire" style={{ opacity: 0.55 }} />
+        {/* Voile bleu nuit pour que les textes blancs se lisent bien */}
         <div
-          ref={voileSombreRef}
-          className="absolute inset-0 opacity-0"
+          className="absolute inset-0"
           style={{
             background:
               "linear-gradient(180deg, rgba(16,45,66,.55) 0%, rgba(16,45,66,.15) 35%, rgba(16,45,66,.25) 60%, rgba(16,45,66,.9) 100%), radial-gradient(ellipse 60% 45% at center, rgba(16,45,66,.45) 0%, transparent 100%), radial-gradient(ellipse at center, transparent 40%, rgba(16,45,66,.45) 100%)",
@@ -209,14 +202,14 @@ export function VideoDefilement() {
             {etape.type === "logo" && (
               <div className="flex flex-col items-center text-center">
                 <Image
-                  src="/images/logo.png"
+                  src="/images/logo-blanc.png"
                   alt={site.nom}
                   width={1400}
                   height={618}
                   priority
-                  className="h-auto w-[min(82vw,640px)] drop-shadow-[0_2px_30px_rgba(250,249,245,.9)]"
+                  className="h-auto w-[min(82vw,640px)] drop-shadow-[0_2px_24px_rgba(16,45,66,.7)]"
                 />
-                <div className="mt-10 flex flex-col items-center gap-2 text-[11px] font-medium tracking-[0.42em] text-nuit uppercase sm:text-sm">
+                <div className="mt-10 flex flex-col items-center gap-2 text-[11px] font-medium tracking-[0.42em] text-ivoire uppercase [text-shadow:0_1px_14px_rgba(16,45,66,.9)] sm:text-sm">
                   {etape.lignes.map((ligne) => (
                     <span key={ligne}>{ligne}</span>
                   ))}
@@ -278,10 +271,10 @@ export function VideoDefilement() {
         {/* « Descendez » */}
         <div
           ref={descendreRef}
-          className="absolute inset-x-0 bottom-8 flex flex-col items-center gap-3 text-nuit"
+          className="absolute inset-x-0 bottom-8 flex flex-col items-center gap-3 text-ivoire"
         >
           <span className="text-[10px] tracking-[0.5em] uppercase">{textes.descendre}</span>
-          <span className="anim-respire block h-10 w-px bg-gradient-to-b from-nuit to-transparent" />
+          <span className="anim-respire block h-10 w-px bg-gradient-to-b from-ivoire to-transparent" />
         </div>
 
         {/* Chargement de la vidéo */}

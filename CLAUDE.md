@@ -18,11 +18,15 @@ fois, avec des instructions de test pas à pas.
 - Avant chaque envoi : `npx eslint src`, `npx tsc --noEmit`, `npm run build`.
 
 ## Vidéo d'accueil
-12 premières secondes de `sources/video-3d-originale.mp4`, découpées en 288 images WebP :
-- ordi : recadrage horizontal du centre, 1280×800 (`public/video/ordi`) ;
-- téléphone : format vertical 720×1260 (`public/video/mobile`).
-Commandes ffmpeg pour les refaire :
-`ffmpeg -t 12 -i sources/video-3d-originale.mp4 -vf "fps=24,crop=720:450:0:(ih-450)/2,scale=1280:800:flags=lanczos,unsharp=5:5:0.6" -c:v libwebp -quality 74 public/video/ordi/%03d.webp`
-`ffmpeg -t 12 -i sources/video-3d-originale.mp4 -vf "fps=24,scale=720:1260:flags=lanczos" -c:v libwebp -quality 72 public/video/mobile/%03d.webp`
+Source : `sources/video-3d.mp4` (12 s, 480×832, vertical). Découpée en 288 images WebP (24 images/s),
+agrandies x4 par IA (Real-ESRGAN « realesr-general-x4v3 », exécuté en ONNX sans PyTorch) :
+- ordi : bande horizontale du centre (16:10), 1600×1000 (`public/video/ordi`) ;
+- téléphone : image entière verticale, 900×1560 (`public/video/mobile`).
+Pour refaire :
+1. `ffmpeg -t 12 -i sources/video-3d.mp4 -vf fps=24 brut/%03d.png`
+2. télécharger `https://github.com/xinntao/Real-ESRGAN/releases/download/v0.2.5.0/realesr-general-x4v3.pth`
+   sous le nom `general-x4v3.pth`, puis `python3 outils/construire-modele.py` (→ `x4.onnx`)
+3. `python3 outils/traiter-video.py` (pip : onnx, onnxruntime, pillow, numpy), puis copier
+   `ordi/` et `mobile/` dans `public/video/`.
 
 @AGENTS.md
