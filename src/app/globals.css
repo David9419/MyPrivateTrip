@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+/* Charte graphique My Private Trip */
+@theme {
+  --color-ocean: #07527a; /* couleur principale, titres, logo */
+  --color-azur: #39b8d6; /* accents, boutons */
+  --color-ciel: #8dd8e8; /* fonds, dégradés */
+  --color-sable: #c9a15b; /* touche luxe, éléments graphiques */
+  --color-nuit: #102d42; /* textes importants, contraste */
+  --color-ivoire: #faf9f5; /* fonds principaux */
+
+  --font-titre: var(--font-playfair), Georgia, serif;
+  --font-texte: var(--font-montserrat), Arial, sans-serif;
+  --font-signature: var(--font-allura), cursive;
+}
+
+html {
+  background: var(--color-nuit);
+}
+
+body {
+  background: var(--color-ivoire);
+  color: var(--color-nuit);
+  font-family: var(--font-texte);
+}
+
+/* Défilement doux (Lenis) */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis:not(.lenis-autoToggle).lenis-stopped {
+  overflow: clip;
+}
+
+/* Petite flèche « descendez » qui respire */
+@keyframes respire {
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translateY(8px);
+    opacity: 1;
+  }
+}
+.anim-respire {
+  animation: respire 2.2s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .anim-respire {
+    animation: none;
+  }
+}
