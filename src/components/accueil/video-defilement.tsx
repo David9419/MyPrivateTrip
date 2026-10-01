@@ -132,9 +132,6 @@ export function VideoDefilement() {
         const horsVideo = rect.bottom < 90;
         document.documentElement.style.setProperty("--sombre", horsVideo ? "0" : "1");
 
-        // Léger zoom arrière pendant la descente : effet de profondeur.
-        canvas.style.transform = `scale(${1.08 - 0.08 * p})`;
-
         barreRef.current!.style.transform = `scaleY(${p})`;
         descendreRef.current!.style.opacity = String(1 - transition(0.01, 0.06, p));
 
@@ -178,16 +175,10 @@ export function VideoDefilement() {
           className="absolute inset-0 h-full w-full object-cover"
           fetchPriority="high"
         />
-        <canvas ref={canvasRef} className="absolute inset-0 h-full w-full origin-center will-change-transform" />
+        <canvas ref={canvasRef} className="absolute inset-0 h-full w-full" />
 
-        {/* Voile bleu nuit pour que les textes blancs se lisent bien */}
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "linear-gradient(180deg, rgba(16,45,66,.55) 0%, rgba(16,45,66,.15) 35%, rgba(16,45,66,.25) 60%, rgba(16,45,66,.9) 100%), radial-gradient(ellipse 60% 45% at center, rgba(16,45,66,.45) 0%, transparent 100%), radial-gradient(ellipse at center, transparent 40%, rgba(16,45,66,.45) 100%)",
-          }}
-        />
+        {/* Couleurs de la vidéo intactes : seule une ombre très légère en haut, pour lire l'en-tête */}
+        <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-black/25 to-transparent" />
 
         {/* Textes qui apparaissent pendant la descente */}
         {textes.etapes.map((etape, i) => (
@@ -207,9 +198,9 @@ export function VideoDefilement() {
                   width={1400}
                   height={618}
                   priority
-                  className="h-auto w-[min(82vw,640px)] drop-shadow-[0_2px_24px_rgba(16,45,66,.7)]"
+                  className="h-auto w-[min(82vw,640px)] drop-shadow-[0_2px_8px_rgba(0,0,0,.5)]"
                 />
-                <div className="mt-10 flex flex-col items-center gap-2 text-[11px] font-medium tracking-[0.42em] text-ivoire uppercase [text-shadow:0_1px_14px_rgba(16,45,66,.9)] sm:text-sm">
+                <div className="mt-10 flex flex-col items-center gap-2 text-[11px] font-medium tracking-[0.42em] text-ivoire uppercase [text-shadow:0_1px_6px_rgba(0,0,0,.7)] sm:text-sm">
                   {etape.lignes.map((ligne) => (
                     <span key={ligne}>{ligne}</span>
                   ))}
@@ -219,8 +210,8 @@ export function VideoDefilement() {
             )}
 
             {etape.type === "titre" && (
-              <div className="max-w-3xl text-center text-ivoire [text-shadow:0_2px_24px_rgba(16,45,66,.55)]">
-                <p className="mb-6 text-[11px] font-semibold tracking-[0.45em] text-sable uppercase [text-shadow:0_1px_12px_rgba(16,45,66,.9)] sm:text-xs">
+              <div className="max-w-3xl text-center text-ivoire [text-shadow:0_2px_6px_rgba(0,0,0,.45),0_4px_40px_rgba(0,0,0,.45)]">
+                <p className="mb-6 text-[11px] font-semibold tracking-[0.45em] text-sable uppercase [text-shadow:0_1px_6px_rgba(0,0,0,.75)] sm:text-xs">
                   {etape.surtitre}
                 </p>
                 <h2 className="font-titre text-5xl leading-[1.05] sm:text-7xl lg:text-8xl">
@@ -237,7 +228,7 @@ export function VideoDefilement() {
             )}
 
             {etape.type === "final" && (
-              <div className="flex max-w-3xl flex-col items-center text-center text-ivoire [text-shadow:0_2px_24px_rgba(16,45,66,.55)]">
+              <div className="flex max-w-3xl flex-col items-center text-center text-ivoire [text-shadow:0_2px_6px_rgba(0,0,0,.45),0_4px_40px_rgba(0,0,0,.45)]">
                 <p className="font-signature text-4xl text-ciel sm:text-6xl">{etape.signature}</p>
                 <h2 className="mt-4 font-titre text-4xl leading-tight sm:text-6xl lg:text-7xl">
                   {etape.titre}
@@ -273,7 +264,7 @@ export function VideoDefilement() {
           ref={descendreRef}
           className="absolute inset-x-0 bottom-8 flex flex-col items-center gap-3 text-ivoire"
         >
-          <span className="text-[10px] tracking-[0.5em] uppercase">{textes.descendre}</span>
+          <span className="text-[10px] tracking-[0.5em] uppercase [text-shadow:0_1px_6px_rgba(0,0,0,.7)]">{textes.descendre}</span>
           <span className="anim-respire block h-10 w-px bg-gradient-to-b from-ivoire to-transparent" />
         </div>
 
