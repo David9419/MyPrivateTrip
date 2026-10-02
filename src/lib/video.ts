@@ -1,14 +1,14 @@
-// La vidéo 3D (12 s) découpée en images, à 24 images par seconde.
-// Ordi : vidéo horizontale 1920×1080 d'origine. Téléphone : vidéo verticale (720×1248).
+// La vidéo (villa au coucher du soleil, 10 s) découpée en images, à 24 images par seconde.
+// Ordi : vidéo entière agrandie (1920×906). Téléphone : bande verticale du centre (720×1200).
 // Les images sont dans public/video/ordi (format large) et public/video/mobile (format téléphone).
 
-export const NOMBRE_IMAGES = 288;
+export const NOMBRE_IMAGES = 246;
 
 export type FormatVideo = "ordi" | "mobile";
 
 export const DIMENSIONS: Record<FormatVideo, { largeur: number; hauteur: number }> = {
-  ordi: { largeur: 1920, hauteur: 1080 },
-  mobile: { largeur: 720, hauteur: 1248 },
+  ordi: { largeur: 1920, hauteur: 906 },
+  mobile: { largeur: 720, hauteur: 1200 },
 };
 
 export function cheminImage(format: FormatVideo, index: number) {

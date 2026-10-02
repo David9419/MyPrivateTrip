@@ -50,11 +50,6 @@ html.lenis body {
   animation: respire 2.2s ease-in-out infinite;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .anim-respire {
-    animation: none;
-  }
-}
 
 /* Apparition au défilement (composant Apparition) : fondu, par le côté ou flou */
 .apparition {
@@ -108,16 +103,19 @@ html.lenis body {
     transform: translate3d(-50%, 0, 0);
   }
 }
+/* Ligne bleu foncé : vers la gauche. Ligne bleu clair : vers la droite. */
 .bandeau {
-  animation: defile 45s linear infinite;
+  animation: defile 140s linear infinite;
 }
 .bandeau-inverse {
-  animation: defile 55s linear infinite reverse;
+  animation: defile-droite 160s linear infinite;
 }
-@media (prefers-reduced-motion: reduce) {
-  .bandeau,
-  .bandeau-inverse {
-    animation: none;
+@keyframes defile-droite {
+  from {
+    transform: translate3d(-50%, 0, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
   }
 }
 

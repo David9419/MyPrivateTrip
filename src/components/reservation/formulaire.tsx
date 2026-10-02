@@ -63,8 +63,8 @@ export function FormulaireReservation({ prestationInitiale }: { prestationInitia
     if (envoye) hautRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
   }, [envoye]);
 
-  const basculer = (id: string) =>
-    setPrestations((liste) => (liste.includes(id) ? liste.filter((x) => x !== id) : [...liste, id]));
+  // Une seule prestation possible : en choisir une remplace la précédente.
+  const choisir = (id: string) => setPrestations([id]);
 
   const envoyer = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -189,15 +189,20 @@ export function FormulaireReservation({ prestationInitiale }: { prestationInitia
       </Bloc>
 
       <Bloc numero={3} titre={r.sections.prestations} delai={150}>
-        <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
+        <div
+          role="radiogroup"
+          aria-label={r.sections.prestations}
+          className="grid grid-cols-2 gap-4 lg:grid-cols-4"
+        >
           {r.prestations.map((p) => {
             const choisi = prestations.includes(p.id);
             return (
               <button
                 key={p.id}
                 type="button"
-                onClick={() => basculer(p.id)}
-                aria-pressed={choisi}
+                onClick={() => choisir(p.id)}
+                role="radio"
+                aria-checked={choisi}
                 className={`group relative flex flex-col items-center gap-4 rounded-[2px] border px-4 py-8 text-center transition-all duration-500 ${
                   choisi
                     ? "border-ocean bg-ocean text-ivoire shadow-[0_20px_40px_-18px_rgba(7,82,122,.6)]"

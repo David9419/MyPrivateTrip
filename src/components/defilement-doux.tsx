@@ -6,7 +6,6 @@ import Lenis from "lenis";
 // Rend le défilement plus fluide et « glissant », comme sur les sites de luxe.
 export function DefilementDoux() {
   useEffect(() => {
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     const lenis = new Lenis({ lerp: 0.09, smoothWheel: true, anchors: { offset: -80 } });
     let id = requestAnimationFrame(function boucle(temps) {
       lenis.raf(temps);

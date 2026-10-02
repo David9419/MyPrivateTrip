@@ -124,7 +124,7 @@ export const site = {
         titre: "Voyage + chef privé",
         texte:
           "L'expérience complète : le voyage organisé de A à Z, et un chef à votre service sur place.",
-        image: "/images/facade.webp",
+        image: "/images/voyage-chef.webp",
         prestation: "voyage-chef",
       },
       {
@@ -132,7 +132,7 @@ export const site = {
         titre: "Séjours de fête",
         texte:
           "Anniversaire, fête de famille, événement entre amis : nous créons un séjour inoubliable autour de votre célébration.",
-        image: "/images/sejour.webp",
+        image: "/images/sejour-fete.webp",
         prestation: "fete",
       },
     ],
@@ -279,7 +279,7 @@ export const site = {
     sections: {
       vous: "Vos coordonnées",
       voyage: "Votre voyage",
-      prestations: "Prestations souhaitées",
+      prestations: "Prestation souhaitée",
       projet: "Votre projet",
     },
     champs: {
@@ -302,7 +302,7 @@ export const site = {
       { id: "fete", titre: "Séjour de fête", icone: "etoile" },
     ],
     erreurs: {
-      prestation: "Choisissez au moins une prestation.",
+      prestation: "Choisissez une prestation.",
       dates: "La date de départ doit être après la date d'arrivée.",
     },
     envoyerEmail: "Envoyer par e-mail",

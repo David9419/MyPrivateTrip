@@ -19,12 +19,11 @@ fois, avec des instructions de test pas à pas.
 
 ## Vidéo d'accueil
 **Demande de l'équipe : ne rien changer à la vidéo** (couleurs, rendu, pas d'IA, pas de voile ni de zoom).
-Découpée en 288 images WebP (12 s, 24 images/s), qui défilent avec la page :
-- ordi : `sources/video-3d-horizontale.mp4` (1920×1080) →
-  `ffmpeg -t 12 -i sources/video-3d-horizontale.mp4 -vf "fps=24,scale=1920:1080:flags=lanczos" -c:v libwebp -quality 80 public/video/ordi/%03d.webp`
-- téléphone : `sources/video-3d.mp4` (vertical 480×832) →
-  `ffmpeg -t 12 -i sources/video-3d.mp4 -vf "fps=24,deblock=filter=strong:block=8,hqdn3d=1:1:2:2,scale=720:1248:flags=lanczos,unsharp=5:5:0.5:5:5:0,cas=0.3" -c:v libwebp -quality 82 public/video/mobile/%03d.webp`
-Photos des sections (`public/images/*.webp`) : images extraites de la vidéo horizontale.
+Source : `sources/video-villa-coucher-soleil.mp4` (848×400, 10 s). Découpée en 246 images WebP (24 images/s) :
+- ordi : `ffmpeg -i sources/video-villa-coucher-soleil.mp4 -vf "fps=24,deblock=filter=weak:block=8,hqdn3d=1:1:2:2,scale=1920:906:flags=lanczos,unsharp=5:5:0.6:5:5:0,cas=0.35" -c:v libwebp -quality 82 public/video/ordi/%03d.webp`
+- téléphone : même chose avec `crop=240:400:(iw-240)/2:0` et `scale=720:1200` → `public/video/mobile/`.
+Après un changement de vidéo : mettre à jour `NOMBRE_IMAGES` et `DIMENSIONS` dans `src/lib/video.ts`.
+Les animations restent actives même si l'ordinateur a « Réduire les animations » (demande de l'équipe).
 
 ## Pages
 - `/` (accueil, liens par ancres) : Vidéo → À propos + chiffres animés (`#a-propos`) → Services

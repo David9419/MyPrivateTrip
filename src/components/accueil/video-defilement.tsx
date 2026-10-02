@@ -102,7 +102,6 @@ export function VideoDefilement() {
       ctx.drawImage(img, (largeur - l) / 2, (hauteur - h) / 2, l, h);
     };
 
-    const reduireMouvement = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     let cible = 0;
     let affiche = 0;
     let derniereDessinee = -1;
@@ -117,7 +116,7 @@ export function VideoDefilement() {
         cible = Math.min(Math.max(-rect.top / parcours, 0), 1);
 
         // Mouvement amorti : la vidéo « glisse » vers la bonne image.
-        affiche = reduireMouvement ? cible : affiche + (cible - affiche) * 0.14;
+        affiche = affiche + (cible - affiche) * 0.14;
         if (Math.abs(cible - affiche) < 0.0005) affiche = cible;
         const p = affiche;
 
