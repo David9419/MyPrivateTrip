@@ -14,7 +14,7 @@ export function Services() {
     <section id="offres" className="bg-ivoire px-5 pt-16 pb-32 sm:px-8 sm:pb-44">
       <TitreSection surtitre={s.surtitre} titre={s.titre} signature={s.signature} />
 
-      <div className="mx-auto mt-16 grid max-w-7xl gap-5 sm:mt-20 sm:grid-cols-2 lg:grid-cols-4">
+      <div data-flou className="mx-auto mt-16 grid max-w-7xl gap-5 sm:mt-20 sm:grid-cols-2 lg:grid-cols-4">
         {s.liste.map((service, i) => (
           <Apparition key={service.titre} effet={effets[i]} delai={i * 120}>
             <Link

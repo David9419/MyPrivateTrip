@@ -29,7 +29,7 @@ export function EnTete() {
           className="absolute inset-0 border-b border-nuit/5 bg-ivoire/95 backdrop-blur-md transition-opacity duration-500"
           style={{ opacity: "calc(1 - var(--sombre, 0))" }}
         />
-        <div className="relative mx-auto flex max-w-7xl items-center justify-between px-5 py-3 sm:px-8 sm:py-4">
+        <div className="relative mx-auto grid max-w-7xl grid-cols-[1fr_auto] items-center px-5 py-3 sm:px-8 sm:py-4 lg:grid-cols-[1fr_auto_1fr]">
           <Link href="/" className="relative block h-14 w-[128px] sm:h-16 sm:w-[146px]" aria-label={site.nom}>
             <Image
               src="/images/logo.png"
@@ -51,7 +51,7 @@ export function EnTete() {
             />
           </Link>
 
-          <nav className="hidden items-center gap-9 lg:flex" style={couleur}>
+          <nav className="hidden items-center gap-10 lg:flex" style={couleur}>
             {e.liens.map((l) => (
               <a
                 key={l.lien}
@@ -62,15 +62,16 @@ export function EnTete() {
                 <span className="absolute -bottom-1.5 start-0 h-px w-0 bg-sable transition-all duration-500 group-hover:w-full" />
               </a>
             ))}
-            <Link
-              href="/reserver"
-              className="bouton-reflet rounded-full bg-sable px-7 py-3 text-xs font-semibold tracking-[0.15em] text-ivoire uppercase transition-colors duration-500 hover:bg-ocean"
-            >
-              {e.reserver}
-            </Link>
           </nav>
 
-          <div className="flex items-center gap-3 lg:hidden">
+          <Link
+            href="/reserver"
+            className="bouton-reflet hidden justify-self-end rounded-full bg-sable px-7 py-3 text-xs font-semibold tracking-[0.15em] text-ivoire uppercase transition-colors duration-500 hover:bg-ocean lg:block"
+          >
+            {e.reserver}
+          </Link>
+
+          <div className="flex items-center gap-3 justify-self-end lg:hidden">
             <Link
               href="/reserver"
               className="rounded-full bg-sable px-4 py-2 text-[10px] font-semibold tracking-[0.15em] text-ivoire uppercase"
@@ -98,27 +99,39 @@ export function EnTete() {
         }`}
       >
         <div className="flex items-center justify-between">
-          <Image src="/images/logo-blanc.png" alt={site.nom} width={1400} height={618} className="h-auto w-32" />
-          <button type="button" onClick={() => setOuvert(false)} className="p-2 text-3xl leading-none" aria-label={e.fermer}>
+          <Image
+            src="/images/logo-blanc.png"
+            alt={site.nom}
+            width={1400}
+            height={618}
+            className="h-auto w-32"
+          />
+          <button
+            type="button"
+            onClick={() => setOuvert(false)}
+            className="p-2 text-3xl leading-none"
+            aria-label={e.fermer}
+          >
             ×
           </button>
         </div>
         <nav className="flex flex-1 flex-col items-center justify-center gap-8">
-          {[...e.liens.map((l) => ({ texte: l.texte, lien: lien(l.lien) })), { texte: e.reserver, lien: "/reserver" }].map(
-            (l, i) => (
-              <a
-                key={l.lien}
-                href={l.lien}
-                onClick={() => setOuvert(false)}
-                className={`font-titre text-4xl transition-all duration-700 ${
-                  ouvert ? "translate-y-0 opacity-100 blur-0" : "translate-y-6 opacity-0 blur-sm"
-                } ${l.lien === "/reserver" ? "text-sable" : ""}`}
-                style={{ transitionDelay: ouvert ? `${150 + i * 90}ms` : "0ms" }}
-              >
-                {l.texte}
-              </a>
-            ),
-          )}
+          {[
+            ...e.liens.map((l) => ({ texte: l.texte, lien: lien(l.lien) })),
+            { texte: e.reserver, lien: "/reserver" },
+          ].map((l, i) => (
+            <a
+              key={l.lien}
+              href={l.lien}
+              onClick={() => setOuvert(false)}
+              className={`font-titre text-4xl transition-all duration-700 ${
+                ouvert ? "translate-y-0 opacity-100 blur-0" : "translate-y-6 opacity-0 blur-sm"
+              } ${l.lien === "/reserver" ? "text-sable" : ""}`}
+              style={{ transitionDelay: ouvert ? `${150 + i * 90}ms` : "0ms" }}
+            >
+              {l.texte}
+            </a>
+          ))}
         </nav>
         <p className="text-center font-signature text-3xl text-ciel">{site.pied.phrase}</p>
       </div>

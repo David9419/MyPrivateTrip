@@ -3,6 +3,7 @@ import { Allura, Montserrat, Playfair_Display } from "next/font/google";
 import { BoutonWhatsapp } from "@/components/bouton-whatsapp";
 import { DefilementDoux } from "@/components/defilement-doux";
 import { EnTete } from "@/components/en-tete";
+import { FlouDefilement } from "@/components/flou-defilement";
 import { PiedDePage } from "@/components/pied-de-page";
 import { site } from "@/contenu/site";
 import "./globals.css";
@@ -40,6 +41,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     >
       <body>
         <DefilementDoux />
+        <FlouDefilement />
         <EnTete />
         {children}
         <PiedDePage />

@@ -13,7 +13,7 @@ export function Approche() {
 
       <TitreSection surtitre={a.surtitre} titre={a.titre} signature={a.signature} clair />
 
-      <ol className="relative mx-auto mt-20 grid max-w-6xl gap-12 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
+      <ol data-flou className="relative mx-auto mt-20 grid max-w-6xl gap-12 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
         {/* Ligne dorée qui relie les étapes (ordinateur) */}
         <span className="absolute inset-x-[12%] top-7 hidden h-px bg-gradient-to-r from-transparent via-sable/60 to-transparent lg:block" />
         {a.etapes.map((etape, i) => (

@@ -23,7 +23,7 @@ export function Contact() {
         <p className="mx-auto mt-8 max-w-xl text-center leading-relaxed text-nuit/70">{c.texte}</p>
       </Apparition>
 
-      <div className="mx-auto mt-16 grid max-w-6xl gap-5 sm:grid-cols-2 lg:grid-cols-4">
+      <div data-flou className="mx-auto mt-16 grid max-w-6xl gap-5 sm:grid-cols-2 lg:grid-cols-4">
         {cartes.map((carte, i) => (
           <Apparition key={carte.libelle} effet={carte.effet} delai={i * 120}>
             <a

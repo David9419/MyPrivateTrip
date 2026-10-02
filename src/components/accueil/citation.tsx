@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useEffect, useRef } from "react";
 import { Apparition } from "@/components/apparition";
+import { TexteAnime } from "@/components/texte-anime";
 import { site } from "@/contenu/site";
 
 const c = site.citation;
@@ -33,11 +34,9 @@ export function Citation() {
         <Image src={c.image} alt="" fill sizes="100vw" className="object-cover" />
       </div>
       <div className="absolute inset-0 bg-nuit/45" />
-      <div className="relative flex h-full flex-col items-center justify-center px-6 text-center">
-        <Apparition>
-          <p className="font-signature text-5xl text-ivoire sm:text-7xl lg:text-8xl">{c.texte}</p>
-        </Apparition>
-        <Apparition delai={200}>
+      <div data-flou className="relative flex h-full flex-col items-center justify-center px-6 text-center">
+        <TexteAnime texte={c.texte} balise="p" className="font-signature text-5xl text-ivoire sm:text-7xl lg:text-8xl" />
+        <Apparition effet="flou" delai={600}>
           <span className="mx-auto mt-8 block h-px w-20 bg-sable" />
           <p className="mt-6 text-[11px] font-semibold tracking-[0.45em] text-ivoire/85 uppercase sm:text-xs">
             {c.auteur}
