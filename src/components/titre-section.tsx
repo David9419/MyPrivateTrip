@@ -15,7 +15,7 @@ export function TitreSection({
   centre?: boolean;
 }) {
   return (
-    <Apparition className={centre ? "text-center" : "text-start"}>
+    <Apparition effet="flou" className={centre ? "text-center" : "text-start"}>
       <p className="text-[11px] font-semibold tracking-[0.45em] text-sable uppercase sm:text-xs">
         {surtitre}
       </p>

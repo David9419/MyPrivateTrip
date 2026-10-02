@@ -1,6 +1,9 @@
 import type { Metadata, Viewport } from "next";
 import { Allura, Montserrat, Playfair_Display } from "next/font/google";
+import { BoutonWhatsapp } from "@/components/bouton-whatsapp";
 import { DefilementDoux } from "@/components/defilement-doux";
+import { EnTete } from "@/components/en-tete";
+import { PiedDePage } from "@/components/pied-de-page";
 import { site } from "@/contenu/site";
 import "./globals.css";
 
@@ -37,7 +40,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     >
       <body>
         <DefilementDoux />
+        <EnTete />
         {children}
+        <PiedDePage />
+        <BoutonWhatsapp />
       </body>
     </html>
   );

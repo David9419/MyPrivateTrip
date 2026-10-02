@@ -26,10 +26,15 @@ Découpée en 288 images WebP (12 s, 24 images/s), qui défilent avec la page :
   `ffmpeg -t 12 -i sources/video-3d.mp4 -vf "fps=24,deblock=filter=strong:block=8,hqdn3d=1:1:2:2,scale=720:1248:flags=lanczos,unsharp=5:5:0.5:5:5:0,cas=0.3" -c:v libwebp -quality 82 public/video/mobile/%03d.webp`
 Photos des sections (`public/images/*.webp`) : images extraites de la vidéo horizontale.
 
-## Page d'accueil (une seule page, liens par ancres)
-Vidéo → Manifeste → Services (`#offres`) → Approche (`#approche`) → Citation → Contact (`#contact`)
-→ Pied de page. Composants dans `src/components/accueil/`. Apparitions au défilement : `Apparition`.
-Le formulaire de contact ouvre la messagerie (mailto) vers `site.coordonnees.email`.
-**À compléter** : vraies coordonnées (e-mail, téléphone, Instagram) et textes de l'ancien site.
+## Pages
+- `/` (accueil, liens par ancres) : Vidéo → À propos + chiffres animés (`#a-propos`) → Services
+  (`#offres`) → Destinations (`#destinations`, bandeau qui défile) → Approche → Citation → Contact
+  (`#contact`). Composants dans `src/components/accueil/`.
+- `/reserver` : bandeau photo + formulaire (`src/components/reservation/`). `?prestation=chef`
+  pré-coche une prestation. Envoi sans serveur : e-mail (mailto) ou WhatsApp (wa.me) pré-remplis.
+- Sur toutes les pages (`layout.tsx`) : `EnTete`, `PiedDePage`, `BoutonWhatsapp` (déplaçable dans
+  les 4 coins, coin mémorisé dans le navigateur).
+- Effets : `Apparition` avec `effet` = fondu | gauche | droite | flou ; `Compteur` (0 → valeur) ;
+  la vidéo devient floue à la fin. Coordonnées réelles dans `site.coordonnees`.
 
 @AGENTS.md

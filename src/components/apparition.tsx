@@ -2,15 +2,20 @@
 
 import { useEffect, useRef, type ElementType, type ReactNode } from "react";
 
-// Fait apparaître son contenu en douceur (fondu + montée) quand il arrive à l'écran.
+// Effets d'apparition au défilement :
+// « fondu » (monte en douceur), « gauche » / « droite » (arrive par le côté), « flou » (sort du flou).
+export type Effet = "fondu" | "gauche" | "droite" | "flou";
+
 export function Apparition({
   children,
   delai = 0,
+  effet = "fondu",
   className = "",
   balise: Balise = "div",
 }: {
   children: ReactNode;
   delai?: number; // en millisecondes
+  effet?: Effet;
   className?: string;
   balise?: ElementType;
 }) {
@@ -33,7 +38,12 @@ export function Apparition({
   }, []);
 
   return (
-    <Balise ref={ref} className={`apparition ${className}`} style={{ transitionDelay: `${delai}ms` }}>
+    <Balise
+      ref={ref}
+      data-effet={effet}
+      className={`apparition ${className}`}
+      style={{ transitionDelay: `${delai}ms` }}
+    >
       {children}
     </Balise>
   );

@@ -17,7 +17,7 @@ export function Approche() {
         {/* Ligne dorée qui relie les étapes (ordinateur) */}
         <span className="absolute inset-x-[12%] top-7 hidden h-px bg-gradient-to-r from-transparent via-sable/60 to-transparent lg:block" />
         {a.etapes.map((etape, i) => (
-          <Apparition key={etape.titre} balise="li" delai={i * 150} className="relative text-center">
+          <Apparition key={etape.titre} balise="li" effet={i % 2 ? "droite" : "gauche"} delai={i * 150} className="relative text-center">
             <span className="relative mx-auto flex size-14 items-center justify-center rounded-full border border-sable/60 bg-nuit font-titre text-xl text-sable">
               {String(i + 1).padStart(2, "0")}
             </span>

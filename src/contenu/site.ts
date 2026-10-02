@@ -1,27 +1,31 @@
 // Tous les textes du site sont ici (pas de texte en dur dans les composants).
-// Provisoire : textes écrits d'après la charte graphique, en attendant ceux de l'ancien site.
+
+const telephone = "+33 6 59 87 12 01";
 
 export const site = {
-  titre: "My Private Trip — Voyages & Conciergerie sur mesure",
+  titre: "My Private Trip — Conciergerie de voyage sur mesure",
   description:
-    "Des voyages uniques, une expérience privée, sur mesure : villas d'exception, conciergerie et chef privé.",
+    "My Private Trip, agence de conciergerie de voyage indépendante : séjours sur mesure, villas d'exception, chef privé et séjours de fête, partout dans le monde.",
   nom: "My Private Trip",
 
-  // À COMPLÉTER : coordonnées réelles (en attendant celles de l'ancien site).
   coordonnees: {
-    email: "contact@exemple.fr" as string,
-    telephone: "" as string,
-    instagram: "" as string,
-    zone: "France & Méditerranée",
+    email: "privatekoshertrip@gmail.com",
+    telephone,
+    telephoneLien: "tel:+33659871201",
+    whatsapp: "https://wa.me/33659871201",
+    instagram: "https://www.instagram.com/my_private_trip",
+    instagramNom: "@my_private_trip",
+    disponibilite: "Disponible 24h/24, 7j/7",
   },
 
   entete: {
-    contact: "Nous contacter",
+    reserver: "Réserver",
     menu: "Menu",
     fermer: "Fermer",
     liens: [
-      { texte: "Nos services", lien: "#offres" },
-      { texte: "Notre approche", lien: "#approche" },
+      { texte: "À propos", lien: "#a-propos" },
+      { texte: "Services", lien: "#offres" },
+      { texte: "Destinations", lien: "#destinations" },
       { texte: "Contact", lien: "#contact" },
     ],
   },
@@ -64,27 +68,40 @@ export const site = {
         signature: "Parce que chaque voyage est unique",
         titre: "Plus qu'un voyage, une expérience",
         boutons: [
-          { texte: "Réserver mon voyage", lien: "#contact", style: "plein" },
-          { texte: "Découvrir nos offres", lien: "#offres", style: "contour" },
+          { texte: "Réserver mon voyage", lien: "/reserver", style: "plein" },
+          { texte: "Découvrir nos services", lien: "#offres", style: "contour" },
         ],
       },
     ],
   },
 
-  manifeste: {
-    surtitre: "My Private Trip",
-    titre: "Plus qu'un voyage,",
-    signature: "une expérience",
-    texte:
-      "Nous imaginons des séjours privés, pensés dans les moindres détails : une villa d'exception, une conciergerie attentive, un chef à votre table. Vous n'avez plus qu'à profiter.",
-    valeurs: ["Évasion", "Confort", "Excellence"],
+  aPropos: {
+    surtitre: "À propos",
+    titre: "Votre conciergerie",
+    signature: "de voyage privée",
+    intro:
+      "My Private Trip est une agence de conciergerie de voyage indépendante, spécialisée dans l'organisation de séjours sur mesure pour une clientèle exigeante.",
+    paragraphes: [
+      "Indépendants, nous choisissons librement nos partenaires à travers le monde : villas privées, hôtels d'exception, chefs, chauffeurs et guides. Notre seul objectif : votre séjour idéal.",
+      "Des vols à la villa, du chef à votre table jusqu'aux moindres réservations, nous orchestrons chaque détail. Avant, pendant et après le voyage, nous restons joignables jour et nuit.",
+    ],
+    bouton: "Organiser mon séjour",
+    image: "/images/villa-exterieur.webp",
+    signatureImage: "Évasion sur mesure",
   },
+
+  statistiques: [
+    { valeur: 24, prefixe: "", suffixe: "/7", libelle: "Disponibles jour et nuit" },
+    { valeur: 150, prefixe: "+", suffixe: "", libelle: "Voyages organisés" },
+    { valeur: 100, prefixe: "+", suffixe: "", libelle: "Destinations" },
+    { valeur: 100, prefixe: "", suffixe: " %", libelle: "Sur mesure" },
+  ],
 
   services: {
     surtitre: "Nos services",
     titre: "Tout est",
     signature: "pensé pour vous",
-    decouvrir: "Nous en parler",
+    decouvrir: "Réserver",
     liste: [
       {
         icone: "avion",
@@ -92,20 +109,7 @@ export const site = {
         texte:
           "Destination, rythme, envies : nous composons un voyage qui vous ressemble, de l'arrivée au départ.",
         image: "/images/villa-exterieur.webp",
-      },
-      {
-        icone: "palmier",
-        titre: "Villas d'exception",
-        texte:
-          "Des maisons rares, choisies pour leur architecture, leur calme et leur vue, prêtes à vous accueillir.",
-        image: "/images/facade.webp",
-      },
-      {
-        icone: "cle",
-        titre: "Conciergerie privée",
-        texte:
-          "Transferts, réservations, activités, petites attentions : une équipe disponible pour chaque demande.",
-        image: "/images/sejour.webp",
+        prestation: "voyage",
       },
       {
         icone: "toque",
@@ -113,7 +117,50 @@ export const site = {
         texte:
           "Un chef s'installe dans votre villa et cuisine pour vous, du petit-déjeuner au dîner de fête.",
         image: "/images/table.webp",
+        prestation: "chef",
       },
+      {
+        icone: "palmier",
+        titre: "Voyage + chef privé",
+        texte:
+          "L'expérience complète : le voyage organisé de A à Z, et un chef à votre service sur place.",
+        image: "/images/facade.webp",
+        prestation: "voyage-chef",
+      },
+      {
+        icone: "etoile",
+        titre: "Séjours de fête",
+        texte:
+          "Anniversaire, fête de famille, événement entre amis : nous créons un séjour inoubliable autour de votre célébration.",
+        image: "/images/sejour.webp",
+        prestation: "fete",
+      },
+    ],
+  },
+
+  destinations: {
+    surtitre: "Destinations",
+    titre: "Partout",
+    signature: "dans le monde",
+    texte:
+      "Si la destination existe, nous l'organisons. Des plages des Maldives aux rues de New York, des villas de Mykonos aux riads de Marrakech.",
+    liste: [
+      "Mykonos",
+      "Santorin",
+      "Maldives",
+      "Dubaï",
+      "New York",
+      "Marrakech",
+      "Côte d'Azur",
+      "Bali",
+      "Saint-Barthélemy",
+      "Côte amalfitaine",
+      "Tel-Aviv",
+      "Miami",
+      "Ibiza",
+      "Thaïlande",
+      "Courchevel",
+      "Le Cap",
     ],
   },
 
@@ -151,24 +198,74 @@ export const site = {
     surtitre: "Contact",
     titre: "Parlons de",
     signature: "votre prochain voyage",
-    texte: "Racontez-nous vos envies : nous revenons vers vous rapidement avec une proposition sur mesure.",
+    texte:
+      "Une idée, une date, une envie ? Écrivez-nous ou appelez-nous : nous vous répondons rapidement, 7 jours sur 7.",
+    reserver: "Réserver mon voyage",
+    email: "E-mail",
+    telephone: "Téléphone",
+    whatsapp: "WhatsApp",
+    instagram: "Instagram",
+  },
+
+  whatsapp: {
+    libelle: "Écrivez-nous sur WhatsApp",
+    disponible: "Disponible 24/7",
+    message: "Bonjour My Private Trip, je souhaite organiser un voyage.",
+  },
+
+  reservation: {
+    titrePage: "Réservation — My Private Trip",
+    surtitre: "Réservation",
+    titre: "Votre voyage",
+    signature: "commence ici",
+    texte:
+      "Remplissez ce formulaire : nous revenons vers vous rapidement avec une proposition sur mesure.",
+    image: "/images/reservation.webp",
+    sections: {
+      vous: "Vos coordonnées",
+      voyage: "Votre voyage",
+      prestations: "Prestations souhaitées",
+      projet: "Votre projet",
+    },
     champs: {
       nom: "Prénom et nom",
       email: "E-mail",
       telephone: "Téléphone",
-      destination: "Destination ou projet",
-      dates: "Dates souhaitées",
-      message: "Votre message",
+      destination: "Destination souhaitée",
+      arrivee: "Arrivée",
+      depart: "Départ",
+      voyageurs: "Nombre de voyageurs",
+      message: "Décrivez votre projet",
+      messageAide: "Occasion, style de logement, envies particulières, budget…",
     },
-    envoyer: "Envoyer ma demande",
-    merci: "Merci ! Votre messagerie s'ouvre pour envoyer la demande.",
-    sujet: "Demande de voyage sur mesure",
+    moins: "Retirer un voyageur",
+    plus: "Ajouter un voyageur",
+    prestations: [
+      { id: "voyage", titre: "Voyage sur mesure", icone: "avion" },
+      { id: "chef", titre: "Chef privé", icone: "toque" },
+      { id: "voyage-chef", titre: "Voyage + chef privé", icone: "palmier" },
+      { id: "fete", titre: "Séjour de fête", icone: "etoile" },
+    ],
+    erreurs: {
+      prestation: "Choisissez au moins une prestation.",
+      dates: "La date de départ doit être après la date d'arrivée.",
+    },
+    envoyerEmail: "Envoyer par e-mail",
+    envoyerWhatsapp: "Envoyer sur WhatsApp",
+    merciTitre: "Merci !",
+    merciTexte:
+      "Votre demande est prête : envoyez-la depuis votre messagerie ou WhatsApp. Nous vous répondons très vite.",
+    nouvelle: "Faire une autre demande",
+    sujet: "Demande de réservation",
   },
 
   pied: {
     phrase: "Plus qu'un voyage, une expérience",
     navigation: "Navigation",
     nousJoindre: "Nous joindre",
+    reservation: "Réservation",
     droits: "Tous droits réservés.",
   },
+
+  valeurs: ["Évasion", "Confort", "Excellence"],
 } as const;

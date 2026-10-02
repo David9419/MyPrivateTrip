@@ -28,6 +28,7 @@ export function VideoDefilement() {
   const sectionRef = useRef<HTMLElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const barreRef = useRef<HTMLDivElement>(null);
+  const voileFinRef = useRef<HTMLDivElement>(null);
   const descendreRef = useRef<HTMLDivElement>(null);
   const etapesRef = useRef<(HTMLDivElement | null)[]>([]);
 
@@ -132,6 +133,12 @@ export function VideoDefilement() {
         const horsVideo = rect.bottom < 90;
         document.documentElement.style.setProperty("--sombre", horsVideo ? "0" : "1");
 
+        // Fin de la vidéo : elle devient floue et s'efface en douceur vers la suite du site.
+        const sortieVideo = transition(0.86, 1, p);
+        canvas.style.filter = sortieVideo > 0.001 ? `blur(${sortieVideo * 16}px)` : "none";
+        canvas.style.transform = sortieVideo > 0.001 ? `scale(${1 + sortieVideo * 0.06})` : "none";
+        voileFinRef.current!.style.opacity = String(sortieVideo * 0.35);
+
         barreRef.current!.style.transform = `scaleY(${p})`;
         descendreRef.current!.style.opacity = String(1 - transition(0.01, 0.06, p));
 
@@ -179,6 +186,8 @@ export function VideoDefilement() {
 
         {/* Couleurs de la vidéo intactes : seule une ombre très légère en haut, pour lire l'en-tête */}
         <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-black/25 to-transparent" />
+
+        <div ref={voileFinRef} className="absolute inset-0 bg-nuit opacity-0" />
 
         {/* Textes qui apparaissent pendant la descente */}
         {textes.etapes.map((etape, i) => (
