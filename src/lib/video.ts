@@ -1,5 +1,5 @@
 // La vidéo 3D (12 s) découpée en images, à 24 images par seconde.
-// Couleurs et rendu d'origine : seulement agrandie, nettoyée (blocs de compression) et un peu plus nette.
+// Ordi : vidéo horizontale 1920×1080 d'origine. Téléphone : vidéo verticale (720×1248).
 // Les images sont dans public/video/ordi (format large) et public/video/mobile (format téléphone).
 
 export const NOMBRE_IMAGES = 288;
@@ -7,7 +7,7 @@ export const NOMBRE_IMAGES = 288;
 export type FormatVideo = "ordi" | "mobile";
 
 export const DIMENSIONS: Record<FormatVideo, { largeur: number; hauteur: number }> = {
-  ordi: { largeur: 1600, hauteur: 1000 },
+  ordi: { largeur: 1920, hauteur: 1080 },
   mobile: { largeur: 720, hauteur: 1248 },
 };
 

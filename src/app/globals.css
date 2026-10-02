@@ -54,3 +54,43 @@ html.lenis body {
     animation: none;
   }
 }
+
+/* Apparition au défilement (composant Apparition) */
+.apparition {
+  opacity: 0;
+  transform: translate3d(0, 40px, 0);
+  filter: blur(6px);
+  transition:
+    opacity 1.1s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 1.1s cubic-bezier(0.16, 1, 0.3, 1),
+    filter 1.1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.apparition.visible {
+  opacity: 1;
+  transform: none;
+  filter: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .apparition {
+    opacity: 1;
+    transform: none;
+    filter: none;
+    transition: none;
+  }
+}
+
+/* Champs du formulaire : ligne fine qui devient dorée */
+.champ {
+  width: 100%;
+  border: 0;
+  border-bottom: 1px solid color-mix(in srgb, var(--color-nuit) 25%, transparent);
+  background: transparent;
+  padding: 0.9rem 0 0.7rem;
+  font-size: 0.95rem;
+  color: var(--color-nuit);
+  outline: none;
+  transition: border-color 0.4s;
+}
+.champ:focus {
+  border-color: var(--color-sable);
+}

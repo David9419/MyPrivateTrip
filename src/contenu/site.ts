@@ -1,5 +1,5 @@
 // Tous les textes du site sont ici (pas de texte en dur dans les composants).
-// Provisoire : textes repris de la charte graphique, en attendant ceux de l'ancien site.
+// Provisoire : textes écrits d'après la charte graphique, en attendant ceux de l'ancien site.
 
 export const site = {
   titre: "My Private Trip — Voyages & Conciergerie sur mesure",
@@ -7,8 +7,23 @@ export const site = {
     "Des voyages uniques, une expérience privée, sur mesure : villas d'exception, conciergerie et chef privé.",
   nom: "My Private Trip",
 
+  // À COMPLÉTER : coordonnées réelles (en attendant celles de l'ancien site).
+  coordonnees: {
+    email: "contact@exemple.fr" as string,
+    telephone: "" as string,
+    instagram: "" as string,
+    zone: "France & Méditerranée",
+  },
+
   entete: {
     contact: "Nous contacter",
+    menu: "Menu",
+    fermer: "Fermer",
+    liens: [
+      { texte: "Nos services", lien: "#offres" },
+      { texte: "Notre approche", lien: "#approche" },
+      { texte: "Contact", lien: "#contact" },
+    ],
   },
 
   // Textes qui apparaissent par-dessus la vidéo, pendant qu'on descend.
@@ -56,11 +71,104 @@ export const site = {
     ],
   },
 
-  apresVideo: {
-    surtitre: "Voyages & Conciergerie",
-    titre: "Évasion",
-    signature: "sur mesure",
+  manifeste: {
+    surtitre: "My Private Trip",
+    titre: "Plus qu'un voyage,",
+    signature: "une expérience",
     texte:
-      "La suite du site (offres, destinations, conciergerie, chef privé, contact) arrive avec les textes et les images de l'ancien site.",
+      "Nous imaginons des séjours privés, pensés dans les moindres détails : une villa d'exception, une conciergerie attentive, un chef à votre table. Vous n'avez plus qu'à profiter.",
+    valeurs: ["Évasion", "Confort", "Excellence"],
+  },
+
+  services: {
+    surtitre: "Nos services",
+    titre: "Tout est",
+    signature: "pensé pour vous",
+    decouvrir: "Nous en parler",
+    liste: [
+      {
+        icone: "avion",
+        titre: "Voyages sur mesure",
+        texte:
+          "Destination, rythme, envies : nous composons un voyage qui vous ressemble, de l'arrivée au départ.",
+        image: "/images/villa-exterieur.webp",
+      },
+      {
+        icone: "palmier",
+        titre: "Villas d'exception",
+        texte:
+          "Des maisons rares, choisies pour leur architecture, leur calme et leur vue, prêtes à vous accueillir.",
+        image: "/images/facade.webp",
+      },
+      {
+        icone: "cle",
+        titre: "Conciergerie privée",
+        texte:
+          "Transferts, réservations, activités, petites attentions : une équipe disponible pour chaque demande.",
+        image: "/images/sejour.webp",
+      },
+      {
+        icone: "toque",
+        titre: "Chef privé",
+        texte:
+          "Un chef s'installe dans votre villa et cuisine pour vous, du petit-déjeuner au dîner de fête.",
+        image: "/images/table.webp",
+      },
+    ],
+  },
+
+  approche: {
+    surtitre: "Notre approche",
+    titre: "Votre voyage",
+    signature: "en quatre temps",
+    etapes: [
+      {
+        titre: "Vous nous parlez de vos envies",
+        texte: "Un échange simple pour comprendre vos attentes, vos dates et votre style.",
+      },
+      {
+        titre: "Nous composons votre séjour",
+        texte: "Villa, services, expériences : nous vous proposons un programme sur mesure.",
+      },
+      {
+        titre: "Nous préparons tout",
+        texte: "Réservations, logistique, chef, conciergerie : chaque détail est réglé avant votre arrivée.",
+      },
+      {
+        titre: "Vous profitez, l'esprit léger",
+        texte: "Sur place, nous restons joignables à tout moment pour que tout soit parfait.",
+      },
+    ],
+  },
+
+  citation: {
+    texte: "Parce que chaque voyage est unique",
+    auteur: "Luxe · Discrétion · Sur mesure",
+    image: "/images/salon.webp",
+  },
+
+  contact: {
+    surtitre: "Contact",
+    titre: "Parlons de",
+    signature: "votre prochain voyage",
+    texte: "Racontez-nous vos envies : nous revenons vers vous rapidement avec une proposition sur mesure.",
+    champs: {
+      nom: "Prénom et nom",
+      email: "E-mail",
+      telephone: "Téléphone",
+      destination: "Destination ou projet",
+      dates: "Dates souhaitées",
+      message: "Votre message",
+    },
+    envoyer: "Envoyer ma demande",
+    merci: "Merci ! Votre messagerie s'ouvre pour envoyer la demande.",
+    sujet: "Demande de voyage sur mesure",
+  },
+
+  pied: {
+    phrase: "Plus qu'un voyage, une expérience",
+    navigation: "Navigation",
+    nousJoindre: "Nous joindre",
+    droits: "Tous droits réservés.",
   },
 } as const;

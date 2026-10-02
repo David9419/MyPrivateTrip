@@ -18,13 +18,18 @@ fois, avec des instructions de test pas à pas.
 - Avant chaque envoi : `npx eslint src`, `npx tsc --noEmit`, `npm run build`.
 
 ## Vidéo d'accueil
-Source : `sources/video-3d.mp4` (12 s, 480×832, vertical). **Demande de l'équipe : ne rien changer
-à la vidéo** (couleurs, rendu, pas d'IA, pas de voile ni de zoom) : seulement la mettre en large sur
-ordinateur et la rendre plus nette. Découpée en 288 images WebP (24 images/s) :
-- ordi : bande horizontale du centre, 1600×1000 (`public/video/ordi`) ;
-- téléphone : image entière, 720×1248 (`public/video/mobile`).
-Commandes :
-`ffmpeg -t 12 -i sources/video-3d.mp4 -vf "fps=24,crop=480:300:0:(ih-300)/2,deblock=filter=strong:block=8,hqdn3d=1:1:2:2,scale=1600:1000:flags=lanczos,unsharp=5:5:0.7:5:5:0,cas=0.4" -c:v libwebp -quality 82 public/video/ordi/%03d.webp`
-`ffmpeg -t 12 -i sources/video-3d.mp4 -vf "fps=24,deblock=filter=strong:block=8,hqdn3d=1:1:2:2,scale=720:1248:flags=lanczos,unsharp=5:5:0.5:5:5:0,cas=0.3" -c:v libwebp -quality 82 public/video/mobile/%03d.webp`
+**Demande de l'équipe : ne rien changer à la vidéo** (couleurs, rendu, pas d'IA, pas de voile ni de zoom).
+Découpée en 288 images WebP (12 s, 24 images/s), qui défilent avec la page :
+- ordi : `sources/video-3d-horizontale.mp4` (1920×1080) →
+  `ffmpeg -t 12 -i sources/video-3d-horizontale.mp4 -vf "fps=24,scale=1920:1080:flags=lanczos" -c:v libwebp -quality 80 public/video/ordi/%03d.webp`
+- téléphone : `sources/video-3d.mp4` (vertical 480×832) →
+  `ffmpeg -t 12 -i sources/video-3d.mp4 -vf "fps=24,deblock=filter=strong:block=8,hqdn3d=1:1:2:2,scale=720:1248:flags=lanczos,unsharp=5:5:0.5:5:5:0,cas=0.3" -c:v libwebp -quality 82 public/video/mobile/%03d.webp`
+Photos des sections (`public/images/*.webp`) : images extraites de la vidéo horizontale.
+
+## Page d'accueil (une seule page, liens par ancres)
+Vidéo → Manifeste → Services (`#offres`) → Approche (`#approche`) → Citation → Contact (`#contact`)
+→ Pied de page. Composants dans `src/components/accueil/`. Apparitions au défilement : `Apparition`.
+Le formulaire de contact ouvre la messagerie (mailto) vers `site.coordonnees.email`.
+**À compléter** : vraies coordonnées (e-mail, téléphone, Instagram) et textes de l'ancien site.
 
 @AGENTS.md

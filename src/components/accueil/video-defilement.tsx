@@ -217,7 +217,7 @@ export function VideoDefilement() {
                 <h2 className="font-titre text-5xl leading-[1.05] sm:text-7xl lg:text-8xl">
                   {etape.titre}
                 </h2>
-                <p className="-mt-1 font-signature text-5xl text-ciel sm:text-7xl lg:text-8xl">
+                <p className="-mt-1 font-signature text-5xl text-ivoire sm:text-7xl lg:text-8xl">
                   {etape.signature}
                 </p>
                 <span className="mx-auto mt-6 block h-px w-20 bg-sable" />
@@ -229,7 +229,7 @@ export function VideoDefilement() {
 
             {etape.type === "final" && (
               <div className="flex max-w-3xl flex-col items-center text-center text-ivoire [text-shadow:0_2px_6px_rgba(0,0,0,.45),0_4px_40px_rgba(0,0,0,.45)]">
-                <p className="font-signature text-4xl text-ciel sm:text-6xl">{etape.signature}</p>
+                <p className="font-signature text-4xl text-ivoire sm:text-6xl">{etape.signature}</p>
                 <h2 className="mt-4 font-titre text-4xl leading-tight sm:text-6xl lg:text-7xl">
                   {etape.titre}
                 </h2>
