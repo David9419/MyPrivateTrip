@@ -37,9 +37,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="fr"
+      suppressHydrationWarning
       className={`${playfair.variable} ${montserrat.variable} ${allura.variable} antialiased`}
     >
-      <body>
+      <body suppressHydrationWarning>
         <DefilementDoux />
         <FlouDefilement />
         <EnTete />

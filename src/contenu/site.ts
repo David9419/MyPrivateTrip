@@ -246,7 +246,7 @@ export const site = {
   citation: {
     texte: "Parce que chaque voyage est unique",
     auteur: "Luxe · Discrétion · Sur mesure",
-    image: "/images/salon.webp",
+    image: "/images/citation.webp",
   },
 
   contact: {
