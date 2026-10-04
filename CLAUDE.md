@@ -19,10 +19,11 @@ fois, avec des instructions de test pas à pas.
 
 ## Vidéo d'accueil
 **Demande de l'équipe : ne rien changer à la vidéo** (couleurs, rendu, pas d'IA, pas de voile ni de zoom).
-Source : `sources/video-villa-coucher-soleil.mp4` (848×400, 10 s). Découpée en 246 images WebP (24 images/s) :
-- ordi : `ffmpeg -i sources/video-villa-coucher-soleil.mp4 -vf "fps=24,deblock=filter=weak:block=8,hqdn3d=1:1:2:2,scale=1920:906:flags=lanczos,unsharp=5:5:0.6:5:5:0,cas=0.35" -c:v libwebp -quality 82 public/video/ordi/%03d.webp`
-- téléphone : même chose avec `crop=240:400:(iw-240)/2:0` et `scale=720:1200` → `public/video/mobile/`.
+Source : `sources/video-villas-mer-2560.mp4` (Pexels, 2560×1440, 14 s). Découpée en 280 images WebP (20 images/s) :
+- ordi : `ffmpeg -i sources/video-villas-mer-2560.mp4 -vf "fps=20,scale=1920:1080:flags=lanczos" -c:v libwebp -quality 62 -compression_level 6 public/video/ordi/%03d.webp`
+- téléphone : `-vf "fps=20,crop=810:1440:(iw-810)/2:0,scale=720:1280:flags=lanczos" -quality 65` → `public/video/mobile/`.
 Après un changement de vidéo : mettre à jour `NOMBRE_IMAGES` et `DIMENSIONS` dans `src/lib/video.ts`.
+Vidéos à fournir : horizontales, 1920×1080 minimum (Pexels/Unsplash, pas Pinterest ni WhatsApp).
 Les animations restent actives même si l'ordinateur a « Réduire les animations » (demande de l'équipe).
 
 ## Pages
