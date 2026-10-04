@@ -246,7 +246,7 @@ export const site = {
   citation: {
     texte: "Parce que chaque voyage est unique",
     auteur: "Luxe · Discrétion · Sur mesure",
-    image: "/images/citation.webp",
+    image: "/images/citation-seychelles.webp",
   },
 
   contact: {
@@ -275,7 +275,7 @@ export const site = {
     signature: "commence ici",
     texte:
       "Remplissez ce formulaire : nous revenons vers vous rapidement avec une proposition sur mesure.",
-    image: "/images/reservation.webp",
+    image: "/images/reservation-plage.webp",
     sections: {
       vous: "Vos coordonnées",
       voyage: "Votre voyage",
