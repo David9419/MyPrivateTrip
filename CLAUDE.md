@@ -12,6 +12,12 @@ fois, avec des instructions de test pas à pas.
 - Polices : Playfair Display (`font-titre`), Montserrat (`font-texte`), Allura (`font-signature`).
 - Logo : ne jamais le déformer ni changer ses couleurs.
 
+## Mise en ligne
+- Hébergement **Vercel** (projet relié au dépôt GitHub `David9419/MyPrivateTrip`) : chaque envoi sur
+  `main` met le site en ligne à jour tout seul (1 à 2 minutes).
+- Chaque modification terminée et vérifiée (lint + build) est envoyée sur la branche de travail
+  **et sur `main`**.
+
 ## Conventions
 - Aucun texte en dur dans les composants : tout est dans `src/contenu/site.ts`.
 - Noms de fichiers, fonctions et variables en français.
