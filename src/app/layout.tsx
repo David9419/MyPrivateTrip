@@ -43,9 +43,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body suppressHydrationWarning>
         <DefilementDoux />
         <FlouDefilement />
-        <EnTete />
-        {children}
-        <PiedDePage />
+        <div className="site">
+          <EnTete />
+          {children}
+          <PiedDePage />
+        </div>
         <BoutonWhatsapp />
       </body>
     </html>

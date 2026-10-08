@@ -16,6 +16,20 @@
 
 html {
   background: var(--color-nuit);
+  /* Sur téléphone, on ne doit jamais pouvoir faire glisser la page sur le côté. */
+  overflow-x: hidden;
+}
+@supports (overflow: clip) {
+  html {
+    overflow-x: clip;
+  }
+}
+
+/* Conteneur de tout le site : coupe ce qui dépasse sur les côtés (sans casser la vidéo « collée »). */
+.site {
+  position: relative;
+  width: 100%;
+  overflow-x: clip;
 }
 
 body {
