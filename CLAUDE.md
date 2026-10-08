@@ -13,7 +13,10 @@ fois, avec des instructions de test pas à pas.
 - Logo : ne jamais le déformer ni changer ses couleurs.
 
 ## Mise en ligne
-- Hébergement **Vercel** (projet relié au dépôt GitHub `David9419/MyPrivateTrip`) : chaque envoi sur
+- Site en ligne : **https://my-private-trip.com** (domaine acheté chez Amen.fr ; aussi
+  https://my-private-trip.vercel.app). DNS chez Amen (Configuration DNS → Modifier la zone DNS) :
+  `A @ 216.198.79.1` et `CNAME www` → valeur donnée par Vercel ; ne pas toucher aux lignes e-mail d'Amen.
+- Hébergement **Vercel** (projet `my-private-trip`, relié au dépôt GitHub `David9419/MyPrivateTrip`) : chaque envoi sur
   `main` met le site en ligne à jour tout seul (1 à 2 minutes).
 - Chaque modification terminée et vérifiée (lint + build) est envoyée sur la branche de travail
   **et sur `main`**.
