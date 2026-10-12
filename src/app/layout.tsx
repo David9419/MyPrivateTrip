@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Allura, Montserrat, Playfair_Display } from "next/font/google";
 import { BoutonWhatsapp } from "@/components/bouton-whatsapp";
 import { DefilementDoux } from "@/components/defilement-doux";
+import { DonneesStructurees, schemaAgence } from "@/components/donnees-structurees";
 import { EnTete } from "@/components/en-tete";
 import { FlouDefilement } from "@/components/flou-defilement";
 import { PiedDePage } from "@/components/pied-de-page";
@@ -25,8 +26,22 @@ const allura = Allura({
 });
 
 export const metadata: Metadata = {
-  title: site.titre,
+  metadataBase: new URL(site.url),
+  title: { default: site.titre, template: `%s | ${site.titreCourt}` },
   description: site.description,
+  keywords: [...site.motsCles],
+  applicationName: site.nom,
+  alternates: { canonical: "/" },
+  openGraph: {
+    type: "website",
+    locale: "fr_FR",
+    url: "/",
+    siteName: site.nom,
+    title: site.titre,
+    description: site.description,
+  },
+  twitter: { card: "summary_large_image", title: site.titre, description: site.description },
+  robots: { index: true, follow: true },
 };
 
 export const viewport: Viewport = {
@@ -41,6 +56,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${playfair.variable} ${montserrat.variable} ${allura.variable} antialiased`}
     >
       <body suppressHydrationWarning>
+        <DonneesStructurees donnees={schemaAgence()} />
         <DefilementDoux />
         <FlouDefilement />
         <div className="site">

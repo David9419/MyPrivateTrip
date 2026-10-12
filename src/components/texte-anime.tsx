@@ -33,9 +33,9 @@ export function TexteAnime({
   }, []);
 
   return (
-    <Balise ref={ref as never} className={`texte-anime block ${className}`} aria-label={texte}>
+    <Balise ref={ref as never} className={`texte-anime block ${className}`}>
       {texte.split(" ").map((mot, i) => (
-        <span key={i} aria-hidden="true" className="mot" style={{ transitionDelay: `${delai + i * 90}ms` }}>
+        <span key={i} className="mot" style={{ transitionDelay: `${delai + i * 90}ms` }}>
           {mot}
           {" "}
         </span>

@@ -1,8 +1,10 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useLayoutEffect, useRef } from "react";
 
 // Nombre qui défile de 0 jusqu'à sa valeur quand il arrive à l'écran (1, 2, 3… 150).
+// Le vrai chiffre est écrit dans la page envoyée par le serveur (lu par Google et les IA) ;
+// dans le navigateur, on le remet à 0 avant l'affichage, puis on l'anime.
 export function Compteur({
   valeur,
   prefixe = "",
@@ -15,11 +17,14 @@ export function Compteur({
   duree?: number;
 }) {
   const ref = useRef<HTMLSpanElement>(null);
-  const [nombre, setNombre] = useState(0);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const el = ref.current;
     if (!el) return;
+    const afficher = (n: number) => {
+      el.textContent = `${prefixe}${n}${suffixe}`;
+    };
+    afficher(0);
     let id = 0;
     const observateur = new IntersectionObserver(
       ([entree]) => {
@@ -29,7 +34,7 @@ export function Compteur({
         const avancer = (maintenant: number) => {
           const t = Math.min((maintenant - debut) / duree, 1);
           const doux = 1 - Math.pow(1 - t, 4); // rapide au début, ralentit à la fin
-          setNombre(Math.round(doux * valeur));
+          afficher(Math.round(doux * valeur));
           if (t < 1) id = requestAnimationFrame(avancer);
         };
         id = requestAnimationFrame(avancer);
@@ -40,14 +45,13 @@ export function Compteur({
     return () => {
       observateur.disconnect();
       cancelAnimationFrame(id);
+      afficher(valeur);
     };
-  }, [valeur, duree]);
+  }, [valeur, prefixe, suffixe, duree]);
 
   return (
     <span ref={ref} className="tabular-nums">
-      {prefixe}
-      {nombre}
-      {suffixe}
+      {`${prefixe}${valeur}${suffixe}`}
     </span>
   );
 }

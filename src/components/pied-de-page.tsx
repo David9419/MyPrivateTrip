@@ -9,7 +9,7 @@ const coord = site.coordonnees;
 export function PiedDePage() {
   return (
     <footer className="bg-nuit px-5 pt-24 pb-10 text-ivoire sm:px-8">
-      <div className="mx-auto grid max-w-6xl gap-14 md:grid-cols-[1.4fr_1fr_1.2fr]">
+      <div className="mx-auto grid max-w-6xl gap-14 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1.2fr]">
         <div>
           <Image src="/images/logo-blanc.png" alt={site.nom} width={1400} height={618} className="h-auto w-56" />
           <p className="mt-6 font-signature text-3xl text-ciel">{p.phrase}</p>
@@ -52,6 +52,19 @@ export function PiedDePage() {
         </div>
 
         <div>
+          <p className="text-[11px] font-semibold tracking-[0.4em] text-sable uppercase">{p.services}</p>
+          <ul className="mt-6 space-y-3 text-sm text-ivoire/75">
+            {site.services.liste.map((s) => (
+              <li key={s.page}>
+                <Link href={`/services/${s.page}`} className="transition-colors hover:text-sable">
+                  {s.titre}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div>
           <p className="text-[11px] font-semibold tracking-[0.4em] text-sable uppercase">{p.nousJoindre}</p>
           <ul className="mt-6 space-y-3 text-sm text-ivoire/75">
             <li>
@@ -77,6 +90,14 @@ export function PiedDePage() {
       <div className="mx-auto mt-20 flex max-w-6xl flex-col items-center justify-between gap-3 border-t border-ivoire/10 pt-8 text-[11px] tracking-wider text-ivoire/45 sm:flex-row">
         <span>
           © {new Date().getFullYear()} {site.nom}. {p.droits}
+        </span>
+        <span className="flex gap-5">
+          <Link href="/mentions-legales" className="transition-colors hover:text-sable">
+            {p.mentions}
+          </Link>
+          <Link href="/confidentialite" className="transition-colors hover:text-sable">
+            {p.confidentialite}
+          </Link>
         </span>
         <span className="tracking-[0.3em] uppercase">{site.valeurs.join(" · ")}</span>
       </div>

@@ -18,7 +18,7 @@ export function APropos() {
           <div className="relative aspect-[4/5] overflow-hidden rounded-t-full">
             <Image
               src={a.image}
-              alt=""
+              alt={a.imageAlt}
               fill
               sizes="(min-width: 1024px) 40vw, 100vw"
               className="object-cover"
@@ -35,17 +35,18 @@ export function APropos() {
               {a.surtitre}
             </p>
           </Apparition>
-          <TexteAnime
-            balise="h2"
-            texte={a.titre}
-            delai={150}
-            className="mt-5 font-titre text-4xl leading-tight text-ocean sm:text-6xl"
-          />
-          <TexteAnime
-            texte={a.signature}
-            delai={400}
-            className="-mt-1 font-signature text-4xl text-azur sm:text-6xl"
-          />
+          <h2 className="font-normal">
+            <TexteAnime
+              texte={a.titre}
+              delai={150}
+              className="mt-5 font-titre text-4xl leading-tight text-ocean sm:text-6xl"
+            />{" "}
+            <TexteAnime
+              texte={a.signature}
+              delai={400}
+              className="-mt-1 font-signature text-4xl text-azur sm:text-6xl"
+            />
+          </h2>
           <Apparition effet="gauche" delai={500}>
             <span className="mt-6 block h-px w-20 bg-sable" />
           </Apparition>

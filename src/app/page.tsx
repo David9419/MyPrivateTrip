@@ -3,6 +3,7 @@ import { Approche } from "@/components/accueil/approche";
 import { Citation } from "@/components/accueil/citation";
 import { Contact } from "@/components/accueil/contact";
 import { Destinations } from "@/components/accueil/destinations";
+import { Faq } from "@/components/accueil/faq";
 import { Services } from "@/components/accueil/services";
 import { VideoDefilement } from "@/components/accueil/video-defilement";
 
@@ -15,6 +16,7 @@ export default function Accueil() {
       <Destinations />
       <Approche />
       <Citation />
+      <Faq />
       <Contact />
     </main>
   );

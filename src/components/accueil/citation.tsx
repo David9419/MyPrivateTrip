@@ -30,7 +30,7 @@ export function Citation() {
   return (
     <section ref={sectionRef} className="relative h-[80svh] min-h-[480px] overflow-hidden bg-nuit">
       <div ref={imageRef} className="absolute -inset-y-[15%] inset-x-0 will-change-transform">
-        <Image src={c.image} alt="" fill sizes="100vw" className="object-cover" />
+        <Image src={c.image} alt={c.imageAlt} fill sizes="100vw" className="object-cover" />
       </div>
       <div className="absolute inset-0 bg-nuit/45" />
       <div data-flou className="relative flex h-full flex-col items-center justify-center px-6 text-center">

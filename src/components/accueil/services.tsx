@@ -18,12 +18,12 @@ export function Services() {
         {s.liste.map((service, i) => (
           <Apparition key={service.titre} effet={effets[i]} delai={i * 120}>
             <Link
-              href={`/reserver?prestation=${service.prestation}`}
+              href={`/services/${service.page}`}
               className="group relative block aspect-[3/4] overflow-hidden rounded-[2px] bg-nuit"
             >
               <Image
                 src={service.image}
-                alt=""
+                alt={service.alt}
                 fill
                 sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
                 className="object-cover transition-transform duration-[1.6s] ease-out group-hover:scale-110"

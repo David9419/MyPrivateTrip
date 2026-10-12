@@ -37,13 +37,29 @@ Les animations restent actives même si l'ordinateur a « Réduire les animation
 
 ## Pages
 - `/` (accueil, liens par ancres) : Vidéo → À propos + chiffres animés (`#a-propos`) → Services
-  (`#offres`) → Destinations (`#destinations`, bandeau qui défile) → Approche → Citation → Contact
-  (`#contact`). Composants dans `src/components/accueil/`.
+  (`#offres`) → Destinations (`#destinations`, bandeau qui défile) → Approche → Citation →
+  Questions fréquentes (`#questions`) → Contact (`#contact`). Composants dans `src/components/accueil/`.
+- `/services/<page>` (4 pages : voyage-sur-mesure, chef-prive, voyage-et-chef-prive,
+  sejours-de-fete) : textes dans `site.pagesServices`. Les cartes Services de l'accueil y mènent.
+- `/mentions-legales` (infos entreprise dans `site.legal.entreprise`, vides = non affichées :
+  **SIRET, adresse, Atout France… à compléter**) et `/confidentialite`.
 - `/reserver` : bandeau photo + formulaire (`src/components/reservation/`). `?prestation=chef`
   pré-coche une prestation. Envoi sans serveur : e-mail (mailto) ou WhatsApp (wa.me) pré-remplis.
 - Sur toutes les pages (`layout.tsx`) : `EnTete`, `PiedDePage`, `BoutonWhatsapp` (déplaçable dans
   les 4 coins, coin mémorisé dans le navigateur).
 - Effets : `Apparition` avec `effet` = fondu | gauche | droite | flou ; `Compteur` (0 → valeur) ;
   la vidéo devient floue à la fin. Coordonnées réelles dans `site.coordonnees`.
+
+## Référencement (SEO / IA) — audits Limova d'octobre 2026
+- Adresse officielle : `site.url` (www). Métadonnées, canonical, Open Graph dans `layout.tsx` et
+  chaque page ; image de partage `src/app/opengraph-image.jpg`.
+- `robots.ts`, `sitemap.ts`, `llms.txt/route.ts` (généré depuis `site.ts`).
+- Données structurées : `src/components/donnees-structurees.tsx` (TravelAgency, FAQPage, Service,
+  BreadcrumbList).
+- Un seul `<h1>` par page (accueil : texte caché derrière le logo, `site.h1`). Les titres de section
+  (titre + signature) sont un seul `<h2>`.
+- Les compteurs écrivent le vrai chiffre dans le HTML, puis s'animent dans le navigateur.
+- Toutes les photos ont un `alt` dans `site.ts`. En-têtes de sécurité dans `next.config.ts`.
+- Spécialité cacher mise en avant (« cuisine cacher sur demande ») : à confirmer par le client.
 
 @AGENTS.md

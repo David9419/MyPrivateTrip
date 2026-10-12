@@ -177,7 +177,7 @@ export function VideoDefilement() {
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src={cheminImage(format ?? "ordi", 0)}
-          alt=""
+          alt={textes.imageAlt}
           className="absolute inset-0 h-full w-full object-cover"
           fetchPriority="high"
         />
@@ -200,14 +200,18 @@ export function VideoDefilement() {
           >
             {etape.type === "logo" && (
               <div className="flex flex-col items-center text-center">
-                <Image
+                {/* Titre principal de la page : le logo + une phrase lue par Google (cachée à l'écran) */}
+                <h1>
+                  <span className="sr-only">{site.h1}</span>
+                  <Image
                   src="/images/logo-blanc.png"
-                  alt={site.nom}
+                  alt=""
                   width={1400}
                   height={618}
                   priority
                   className="h-auto w-[min(82vw,640px)] drop-shadow-[0_2px_8px_rgba(0,0,0,.5)]"
                 />
+                </h1>
                 <div className="mt-10 flex flex-col items-center gap-2 text-[11px] font-medium tracking-[0.42em] text-ivoire uppercase [text-shadow:0_1px_6px_rgba(0,0,0,.7)] sm:text-sm">
                   {etape.lignes.map((ligne) => (
                     <span key={ligne}>{ligne}</span>
