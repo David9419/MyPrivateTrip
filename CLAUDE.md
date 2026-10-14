@@ -41,6 +41,9 @@ Les animations restent actives même si l'ordinateur a « Réduire les animation
   Questions fréquentes (`#questions`) → Contact (`#contact`). Composants dans `src/components/accueil/`.
 - `/services/<page>` (4 pages : voyage-sur-mesure, chef-prive, voyage-et-chef-prive,
   sejours-de-fete) : textes dans `site.pagesServices`. Les cartes Services de l'accueil y mènent.
+- **Avis** : section `#avis` de l'accueil + page `/avis` (formulaire envoyé par e-mail ou WhatsApp,
+  rien n'est publié automatiquement). Pour publier un avis validé par le client : l'ajouter dans
+  `site.avis.liste` (nom « Prénom I. », voyage, note sur 5, texte).
 - `/mentions-legales` (infos entreprise dans `site.legal.entreprise`, vides = non affichées :
   **SIRET, adresse, Atout France… à compléter**) et `/confidentialite`.
 - `/reserver` : bandeau photo + formulaire (`src/components/reservation/`). `?prestation=chef`
@@ -60,6 +63,7 @@ Les animations restent actives même si l'ordinateur a « Réduire les animation
   (titre + signature) sont un seul `<h2>`.
 - Les compteurs écrivent le vrai chiffre dans le HTML, puis s'animent dans le navigateur.
 - Toutes les photos ont un `alt` dans `site.ts`. En-têtes de sécurité dans `next.config.ts`.
-- Spécialité cacher mise en avant (« cuisine cacher sur demande ») : à confirmer par le client.
+- Cacher : le client propose **uniquement** le chef privé cacher et les repas de Chabbat
+  (pas de bar-mitsva, pas de « séjours cacher » complets) — ne pas promettre plus.
 
 @AGENTS.md

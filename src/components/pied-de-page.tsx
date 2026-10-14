@@ -44,6 +44,11 @@ export function PiedDePage() {
               </li>
             ))}
             <li>
+              <Link href="/avis" className="transition-colors hover:text-sable">
+                {p.avis}
+              </Link>
+            </li>
+            <li>
               <Link href="/reserver" className="text-sable transition-colors hover:text-ivoire">
                 {p.reservation}
               </Link>

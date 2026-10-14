@@ -19,8 +19,7 @@ export const site = {
     "villa de luxe",
     "chef privé",
     "chef privé cacher",
-    "voyage cacher",
-    "séjour cacher",
+    "repas de Chabbat",
     "séjour de fête",
     "location de villa avec chef",
   ],
@@ -103,7 +102,7 @@ export const site = {
     paragraphes: [
       "Indépendants, nous choisissons librement nos partenaires à travers le monde : villas privées, hôtels d'exception, chefs, chauffeurs et guides. Notre seul objectif : votre séjour idéal.",
       "Des vols à la villa, du chef à votre table jusqu'aux moindres réservations, nous orchestrons chaque détail. Avant, pendant et après le voyage, nous restons joignables jour et nuit.",
-      "Pour les voyageurs qui respectent la cacheroute, nous organisons aussi des séjours cacher : chef privé cacher dans votre villa, repas de Chabbat et de fêtes préparés à l'avance, et un séjour pensé pour que vous profitiez sans rien sacrifier de vos habitudes.",
+      "Pour les voyageurs qui respectent la cacheroute, nous proposons un chef privé cacher dans votre villa, ainsi que les repas de Chabbat préparés à l'avance.",
     ],
     bouton: "Organiser mon séjour",
     image: "/images/a-propos.webp",
@@ -359,9 +358,9 @@ export const site = {
           "My Private Trip est une agence de conciergerie de voyage indépendante, spécialisée dans les séjours de luxe sur mesure pour une clientèle exigeante. Nous organisons le voyage de A à Z : recherche et réservation de villas d'exception ou d'hôtels haut de gamme, vols, transferts, chef privé, activités, restaurants et services sur place. Indépendants, nous choisissons librement nos partenaires dans le monde entier, avec un seul objectif : un séjour qui vous ressemble. Chaque voyage est unique et construit à partir de vos envies, de vos dates, de votre budget et du nombre de voyageurs. Avant, pendant et après le séjour, une personne dédiée reste joignable 24h/24 et 7j/7, par téléphone ou sur WhatsApp, pour régler le moindre détail. Notre promesse tient en trois mots : luxe, discrétion et sur mesure.",
       },
       {
-        question: "Organisez-vous des séjours et des repas cacher ?",
+        question: "Proposez-vous un chef privé cacher et les repas de Chabbat ?",
         reponse:
-          "Oui. My Private Trip organise des voyages pour les familles et les groupes qui respectent la cacheroute. Nous pouvons installer un chef privé cacher dans votre villa : il prépare les repas du quotidien comme les dîners de fête, s'occupe des courses et adapte les menus à vos habitudes. Les repas de Chabbat et des fêtes juives sont prévus à l'avance, pour que vous n'ayez rien à gérer sur place. Le niveau de cacheroute souhaité est défini avec vous dès le premier échange, et nous en tenons compte dans le choix de la destination, du logement et des prestataires. Que ce soit pour un séjour en famille, une fête ou des vacances entre amis, vous profitez d'un voyage de luxe sans renoncer à vos exigences.",
+          "Oui. Pour les familles et les groupes qui respectent la cacheroute, My Private Trip propose un chef privé cacher qui s'installe dans votre villa pendant le séjour. Il prépare les repas du quotidien comme les dîners de fête, s'occupe des courses et adapte les menus à vos goûts et à vos habitudes, enfants compris. Les repas de Chabbat sont prévus et préparés à l'avance, pour que vous n'ayez rien à gérer sur place et que vous puissiez profiter pleinement de ce moment en famille ou entre amis. Le service de chef privé cacher peut être réservé seul, pour un logement que vous avez déjà, ou avec un voyage complet organisé par nos soins. Vous profitez ainsi d'un séjour de luxe, sans renoncer à vos exigences à table.",
       },
       {
         question: "Dans quelles destinations organisez-vous des voyages ?",
@@ -391,7 +390,7 @@ export const site = {
     "voyage-sur-mesure": {
       metaTitre: "Voyage de luxe sur mesure — conciergerie privée",
       metaDescription:
-        "Voyage de luxe sur mesure : villas d'exception, vols, transferts, activités et conciergerie 24h/24. Séjours cacher sur demande. Devis personnalisé.",
+        "Voyage de luxe sur mesure : villas d'exception, vols, transferts, activités et conciergerie 24h/24. Chef privé cacher sur demande. Devis personnalisé.",
       surtitre: "Voyages sur mesure",
       titre: "Un voyage",
       signature: "qui vous ressemble",
@@ -429,12 +428,12 @@ export const site = {
       titre: "Un chef",
       signature: "rien que pour vous",
       intro:
-        "Avec le service de chef privé de My Private Trip, un chef s'installe dans votre villa et cuisine pour vous pendant le séjour : petit-déjeuner, déjeuner au bord de la piscine, dîner en famille ou grande soirée de fête. Les menus sont composés avec vous, selon vos goûts, vos habitudes, les allergies et les envies de chacun, enfants compris. Le chef s'occupe des courses avec des produits de qualité, prépare, sert et laisse la cuisine propre : vous n'avez qu'à passer à table. Pour les familles qui respectent la cacheroute, nous proposons un chef privé cacher : le niveau de cacheroute est défini ensemble dès le départ, et les repas de Chabbat et des fêtes sont préparés à l'avance. Le service peut être réservé seul, pour une villa que vous avez déjà, ou avec un voyage complet organisé par nos soins.",
+        "Avec le service de chef privé de My Private Trip, un chef s'installe dans votre villa et cuisine pour vous pendant le séjour : petit-déjeuner, déjeuner au bord de la piscine, dîner en famille ou grande soirée de fête. Les menus sont composés avec vous, selon vos goûts, vos habitudes, les allergies et les envies de chacun, enfants compris. Le chef s'occupe des courses avec des produits de qualité, prépare, sert et laisse la cuisine propre : vous n'avez qu'à passer à table. Pour les familles qui respectent la cacheroute, nous proposons un chef privé cacher : il prépare aussi les repas de Chabbat à l'avance. Le service peut être réservé seul, pour une villa que vous avez déjà, ou avec un voyage complet organisé par nos soins.",
       inclusTitre: "Le service comprend",
       inclus: [
         "Menus personnalisés, construits avec vous",
         "Courses et approvisionnement en produits de qualité",
-        "Cuisine cacher sur demande, repas de Chabbat et de fêtes",
+        "Cuisine cacher et repas de Chabbat sur demande",
         "Petits-déjeuners, déjeuners, dîners et soirées de fête",
         "Service à table et rangement de la cuisine",
         "Adaptation aux allergies, régimes et enfants",
@@ -450,7 +449,7 @@ export const site = {
         {
           question: "Le chef peut-il cuisiner cacher ?",
           reponse:
-            "Oui, sur demande. Nous définissons avec vous le niveau de cacheroute souhaité et organisons l'approvisionnement, la préparation des repas et ceux de Chabbat en conséquence.",
+            "Oui, sur demande. Le chef cuisine cacher pendant tout le séjour et prépare les repas de Chabbat à l'avance.",
         },
       ],
     },
@@ -462,7 +461,7 @@ export const site = {
       titre: "L'expérience",
       signature: "complète",
       intro:
-        "La formule Voyage + chef privé réunit nos deux savoir-faire : nous organisons tout le voyage, de la destination à la villa en passant par les vols, les transferts et les activités, et un chef privé vous attend sur place pour cuisiner pendant tout le séjour. C'est la formule idéale pour les familles nombreuses, les groupes d'amis et les voyageurs qui veulent profiter pleinement, sans courses, sans cuisine et sans contrainte. Les menus sont préparés avec vous avant le départ ; pour les voyageurs qui respectent la cacheroute, le chef cuisine cacher et les repas de Chabbat et des fêtes sont prévus à l'avance. Une seule équipe s'occupe de tout, et reste joignable 24h/24 et 7j/7 pendant le séjour.",
+        "La formule Voyage + chef privé réunit nos deux savoir-faire : nous organisons tout le voyage, de la destination à la villa en passant par les vols, les transferts et les activités, et un chef privé vous attend sur place pour cuisiner pendant tout le séjour. C'est la formule idéale pour les familles nombreuses, les groupes d'amis et les voyageurs qui veulent profiter pleinement, sans courses, sans cuisine et sans contrainte. Les menus sont préparés avec vous avant le départ ; pour les voyageurs qui respectent la cacheroute, le chef cuisine cacher et les repas de Chabbat sont prévus à l'avance. Une seule équipe s'occupe de tout, et reste joignable 24h/24 et 7j/7 pendant le séjour.",
       inclusTitre: "Tout est compris",
       inclus: [
         "Choix de la destination et de la villa",
@@ -490,12 +489,12 @@ export const site = {
     "sejours-de-fete": {
       metaTitre: "Séjour de fête, anniversaire et événement en villa de luxe",
       metaDescription:
-        "Anniversaire, fête de famille, bar-mitsva, événement entre amis : un séjour de fête sur mesure en villa de luxe, chef privé et organisation complète.",
+        "Anniversaire, fête de famille, événement entre amis : un séjour de fête sur mesure en villa de luxe, chef privé et organisation complète.",
       surtitre: "Séjours de fête",
       titre: "Votre fête,",
       signature: "un souvenir inoubliable",
       intro:
-        "My Private Trip organise des séjours autour de vos célébrations : anniversaire, fête de famille, bar-mitsva ou bat-mitsva, demande en mariage, enterrement de vie de jeune fille ou de garçon, ou simplement des retrouvailles entre amis. Nous trouvons le lieu idéal, souvent une grande villa privée, et nous préparons tout : hébergement de tous les invités, transferts, chef privé et dîner de fête, décoration, animations et activités. Pour les familles qui respectent la cacheroute, la cuisine peut être entièrement cacher et les repas de Chabbat sont prévus à l'avance. Vous profitez de chaque moment avec vos proches, pendant que nous nous occupons de la logistique, et nous restons joignables 24h/24 et 7j/7 avant et pendant l'événement.",
+        "My Private Trip organise des séjours autour de vos célébrations : anniversaire, fête de famille, demande en mariage, enterrement de vie de jeune fille ou de garçon, ou simplement des retrouvailles entre amis. Nous trouvons le lieu idéal, souvent une grande villa privée, et nous préparons tout : hébergement de tous les invités, transferts, chef privé et dîner de fête, décoration, animations et activités. Pour les familles qui respectent la cacheroute, le chef privé peut cuisiner cacher et préparer les repas de Chabbat. Vous profitez de chaque moment avec vos proches, pendant que nous nous occupons de la logistique, et nous restons joignables 24h/24 et 7j/7 avant et pendant l'événement.",
       inclusTitre: "Nous préparons",
       inclus: [
         "Recherche du lieu : villa privée ou hôtel d'exception",
@@ -509,9 +508,9 @@ export const site = {
       imageAlt: "Séjour de fête dans une villa de luxe",
       faq: [
         {
-          question: "Organisez-vous des bar-mitsva à l'étranger ?",
+          question: "Quels types de fêtes organisez-vous ?",
           reponse:
-            "Oui. Nous organisons le séjour et la fête autour de la bar-mitsva ou de la bat-mitsva : lieu, hébergement des invités, repas cacher et Chabbat.",
+            "Anniversaires, fêtes de famille, demandes en mariage, enterrements de vie de jeune fille ou de garçon, retrouvailles entre amis : nous organisons le séjour autour de votre célébration.",
         },
         {
           question: "Pour combien d'invités ?",
@@ -601,6 +600,45 @@ export const site = {
     },
   },
 
+  // Avis clients. Pour publier un avis reçu : l'ajouter dans « liste » (nom, voyage, note sur 5, texte).
+  avis: {
+    surtitre: "Avis clients",
+    titre: "Ils ont voyagé",
+    signature: "avec nous",
+    liste: [] as { nom: string; voyage: string; note: number; texte: string }[],
+    vide: "Vous avez voyagé avec My Private Trip ? Partagez votre expérience : votre avis aidera les prochains voyageurs.",
+    bouton: "Laisser un avis",
+    page: {
+      metaTitre: "Laisser un avis",
+      metaDescription: "Vous avez voyagé avec My Private Trip ? Partagez votre expérience et notez votre séjour.",
+      surtitre: "Votre avis",
+      titre: "Racontez-nous",
+      signature: "votre voyage",
+      texte: "Votre avis compte : il sera publié sur le site après vérification.",
+      image: "/images/citation-seychelles.webp",
+      imageAlt: "Plage paradisiaque aux Seychelles",
+    },
+    champs: {
+      nom: "Prénom et nom",
+      voyage: "Votre voyage",
+      voyageAide: "Destination, mois et année (ex. : Mykonos, août 2026)",
+      note: "Votre note",
+      etoile: "étoile",
+      etoiles: "étoiles",
+      texte: "Votre avis",
+      texteAide: "Ce que vous avez aimé, ce qui vous a marqué…",
+      accord: "J'accepte que mon avis (prénom, initiale du nom, voyage et texte) soit publié sur le site My Private Trip.",
+    },
+    erreurNote: "Choisissez une note de 1 à 5 étoiles.",
+    sujet: "Nouvel avis client",
+    envoyerEmail: "Envoyer par e-mail",
+    envoyerWhatsapp: "Envoyer sur WhatsApp",
+    merciTitre: "Merci !",
+    merciTexte:
+      "Votre avis est prêt : envoyez-le depuis votre messagerie ou WhatsApp. Il sera publié sur le site après vérification.",
+    retour: "Retour à l'accueil",
+  },
+
   pied: {
     phrase: "Plus qu'un voyage, une expérience",
     navigation: "Navigation",
@@ -610,6 +648,7 @@ export const site = {
     services: "Services",
     mentions: "Mentions légales",
     confidentialite: "Confidentialité",
+    avis: "Laisser un avis",
   },
 
   valeurs: ["Évasion", "Confort", "Excellence"],

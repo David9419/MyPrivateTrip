@@ -1,5 +1,6 @@
 import { APropos } from "@/components/accueil/a-propos";
 import { Approche } from "@/components/accueil/approche";
+import { Avis } from "@/components/accueil/avis";
 import { Citation } from "@/components/accueil/citation";
 import { Contact } from "@/components/accueil/contact";
 import { Destinations } from "@/components/accueil/destinations";
@@ -15,6 +16,7 @@ export default function Accueil() {
       <Services />
       <Destinations />
       <Approche />
+      <Avis />
       <Citation />
       <Faq />
       <Contact />
